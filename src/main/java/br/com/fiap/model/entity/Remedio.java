@@ -4,9 +4,9 @@ import br.com.fiap.model.dto.RemedioDTO;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+
 @Entity(name = "Remedio")
 @Table(name = "dddj_remedios")
-
 public class Remedio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +17,10 @@ public class Remedio {
     private LocalDate dataDeValidade;
     private String urlImagem;
 
+    // gerar o construtor vazio
+    // gerar todos os getters e setters
 
-    // construtores
+
     public Remedio() {
     }
 
@@ -30,7 +32,6 @@ public class Remedio {
         this.urlImagem = remedioDTO.urlImagem();
     }
 
-    // getters/setters
     public Long getCodigo() {
         return codigo;
     }

@@ -1,11 +1,19 @@
 package br.com.fiap.model.dto;
 
+import jakarta.validation.constraints.*;
+
 import java.time.LocalDate;
 
 public record RemedioDTO(
-    String nome,
-    Double preco,
-    LocalDate dataDeFabricacao,
-    LocalDate dataDeValidade,
-    String urlImagem
-) {}
+        @NotBlank
+        String nome,
+        @NotNull
+        @PositiveOrZero
+        Double preco,
+        @PastOrPresent
+        LocalDate dataDeFabricacao,
+        @FutureOrPresent
+        LocalDate dataDeValidade,
+        String urlImagem
+) {
+}
